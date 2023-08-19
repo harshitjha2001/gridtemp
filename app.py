@@ -14,7 +14,7 @@ popular_products = pd.read_pickle("popular.pkl")
 
 # Load the cosine similarity matrix
 similarity = pd.read_pickle("similarity.pkl")
-similarity_scores = pd.read_pickle("similarity_scores.pkl"
+similarity_scores = pd.read_pickle("similarity_scores.pkl")
 
 
 def recommend(product):
