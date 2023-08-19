@@ -95,5 +95,5 @@ def show_recommendations(product):
         extra_data=extra_recommended_products,
     )
 
-if _name_ == "_main_":
+if _name_ == "_name_":
     app.run(debug=True)
