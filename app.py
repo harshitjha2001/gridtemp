@@ -4,18 +4,21 @@ import numpy as np
 import joblib as joblib
 app = Flask(__name__)
 
-# Load the preprocessed data and cosine similarity matrix from pickle.pkl
-import pandas as pd
+with open("pickle.pkl", "rb") as f:
+    data = pickle.load(f)
 
-# Load the preprocessed data and cosine similarity matrix
-data = pd.read_pickle("pickle.pkl")
-pt = pd.read_pickle("pt.pkl")
-popular_products = pd.read_pickle("popular.pkl")
+with open("pt.pkl", "rb") as f:
+    pt = pickle.load(f)
 
-# Load the cosine similarity matrix
-similarity = pd.read_pickle("similarity.pkl")
-similarity_scores = pd.read_pickle("similarity_scores.pkl")
+with open("popular.pkl", "rb") as f:
+    popular_products = pickle.load(f)
 
+# Load the cosine similarity matrix from the pickle
+with open("similarity.pkl", "rb") as f:
+    similarity = pickle.load(f)
+
+with open("similarity_scores.pkl", "rb") as f:
+    similarity_scores = pickle.load(f)
 
 def recommend(product):
     prod_ind = data[data["Product"] == product].index[0]
