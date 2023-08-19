@@ -3,5 +3,5 @@ Flask
 numpy
 scikit_learn
 gunicorn
-pandas=1.3.5
+pandas==1.3.5
 
