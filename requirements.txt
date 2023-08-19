@@ -1,6 +1,6 @@
-joblib
-Flask==2.0.1
-numpy==1.21.1
+dill
+Flask
+numpy
 scikit_learn
 gunicorn
 
