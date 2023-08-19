@@ -51,7 +51,7 @@ def hello_world():
 
 database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion' },
             "harshit": {"password": "234", "last_viewed": 'realme Buds Air 3 Neo'},
-            "himanshu": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'},}}
+            "himanshu": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
 
 
 @app.route("/form_login", methods=["POST", "GET"])
