@@ -1,0 +1,123 @@
+.product1 {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+img {
+    transition: filter 0.3s ease; /* Apply smooth transition effect */
+  }
+  
+img:hover  {
+    filter: sepia(100%); /* Change color by applying grayscale filter */
+  }
+
+  article {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.product-details {
+    width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+.price {
+    margin-left: 50px;
+    
+}
+
+.product-details1 {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+
+#productImage img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#productName {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label-value {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.label-value span {
+    margin-right: 10px;
+}
+
+#productDescription {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px;
+    margin-top: 20px; /* Add some spacing at the top */
+}
+
+.buy-button, .cart-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-button {
+    background-color: #4caf50;
+}
+
+.cart-button {
+    background-color: #2196f3;
+}

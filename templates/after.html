@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recommendation Results</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            /* Replace 'Your-Desired-Font' with the actual font name */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+
+
+        }
+
+        .image-grid img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            margin-top: 10px;
+
+        }
+
+        .h1tag {
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        #heading1 {
+            margin-bottom: 10px;
+        }
+
+        #span1 {
+            color: red;
+            font-size: 23px;
+            margin: 5px;
+        }
+
+        #span {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .navbar-button {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:ital,wght@0,300;1,100&display=swap"
+        rel="stylesheet">
+    <!-- Include your other scripts and resources here -->
+</head>
+
+<body>
+
+    <div class="navbar">
+        <button class="navbar-button" id="home-button">BACK</button>
+    </div>
+
+    <article>
+        <div class="product-details">
+
+            <div class="productImage" style="float: left;">
+                <h1 id="heading1">{{data1}}</h1>
+            </div>
+            <div class="price" style="width: 400px;float: right;">
+
+                <div id="span1">
+                    PRICE:
+                </div>
+                <div id="span">
+                    DESCRIPTION:<p>{{ clicked_product_description }}</p>
+                </div>
+                <div class="buttons-container">
+                    <button class="cart-button">Add to Cart</button>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <h1 class="h1tag">RECOMMENDATIONS:</h1>
+
+    <div class="product-details1">
+        <div class="image-grid">
+            {% for recommended_product in data %}
+            <div>
+                <a href="{{ url_for('show_recommendations', product=recommended_product) }}">
+                    <h2>{{ recommended_product }}</h2>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+    <h1 class="h1tag">USERS WHO LIKED {{data1}} ALSO LIKED :</h1>
+    <div class="product-details1">
+        <div class="image-grid">
+            {% for recommended_product_x in extra_data %}
+            <div>
+                <a href="{{ url_for('show_recommendations', product=recommended_product_x) }}">
+                    <h2>{{ recommended_product_x }}</h2>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Include your other HTML content and scripts here -->
+
+
+    <script src="{{ url_for('static', filename='products.js') }}"></script>
+    <script>
+        const homeButton = document.getElementById("home-button");
+        homeButton.addEventListener("click", () => {
+            // Navigate back to the previous page
+            window.history.back();
+        });
+
+
+        // Loop through the data and update the paragraphs
+        const clickedProductHeading = document.getElementById('heading1');
+        const clickedProductName = clickedProductHeading.textContent.trim();
+        const clickedProduct = PRODUCTS.find(item => item.name === clickedProductName);
+        const clickedProductSpan = document.getElementById('span');
+        const clickedProductSpan1 = document.getElementById('span1');
+        if (clickedProduct) {
+            const image = document.createElement('img');
+            image.src = clickedProduct.image;
+            clickedProductHeading.append(image);
+
+            const heading = document.createElement('h1');
+            image.src = clickedProduct.image;
+            clickedProductHeading.insertAdjacentElement('afterend', image);
+
+
+            const descriptionParagraph = document.createElement('span');
+            descriptionParagraph.textContent = clickedProduct.desc;
+            clickedProductSpan.insertAdjacentElement('afterend', descriptionParagraph);
+
+            const descriptionPrice = document.createElement('span');
+            descriptionPrice.textContent = clickedProduct.price;
+            clickedProductSpan1.append(descriptionPrice);
+        }
+
+
+
+
+        const paragraphs = document.querySelectorAll('h2');
+        paragraphs.forEach(paragraph => {
+            const text = paragraph.textContent.trim();
+            const item = PRODUCTS.find(item => item.name === text);
+
+            if (item) {
+                const image = document.createElement('img');
+                image.src = item.image;
+                paragraph.insertAdjacentElement('afterend', image);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

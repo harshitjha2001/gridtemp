@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+
+.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background-color: #f7f7f7;
+    }
+
+    .form {
+      width: 450px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form h2 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form input[type="text"],
+    .form input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 95%;
+    }
+    
+
+    .form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <form class="form" action="/form_login" method="post">
+      <h2>Login Form</h2>
+      Username:<br>
+      <input type="text" name="username"><br>
+      Password:<br>
+      <input type="password" name="password"><br><br>
+      <input type="submit" value="Login" class="button">
+    </form>
+  </div>
+     <div style="text-align: center;">
+      <h1>{{info}}</h1>
+     </div>
+
+</body>
+
+
+</body>
+</html>
