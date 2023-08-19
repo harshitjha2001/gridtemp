@@ -1,17 +1,24 @@
 from flask import Flask, render_template, request, jsonify
-
+import pickle
 import numpy as np
-import joblib as joblib
+
 app = Flask(__name__)
 
-# Load the preprocessed data and cosine similarity matrix from pickle.pkl
-data = joblib.load("pickle.pkl")
-pt = joblib.load("pt.pkl")
-popular_products = joblib.load("popular.pkl")
+with open("pickle.pkl", "rb") as f:
+    data = pickle.load(f)
+
+with open("pt.pkl", "rb") as f:
+    pt = pickle.load(f)
+
+with open("popular.pkl", "rb") as f:
+    popular_products = pickle.load(f)
 
 # Load the cosine similarity matrix from the pickle
-similarity = joblib.load("similarity.pkl")
-similarity_scores = joblib.load("similarity_scores.pkl")
+with open("similarity.pkl", "rb") as f:
+    similarity = pickle.load(f)
+
+with open("similarity_scores.pkl", "rb") as f:
+    similarity_scores = pickle.load(f)
 
 def recommend(product):
     prod_ind = data[data["Product"] == product].index[0]
@@ -43,8 +50,8 @@ def hello_world():
     return render_template("login.html")
 
 database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion' },
-            "user2": {"password": "234", "last_viewed": 'Lenovo IdeaPad'},
-            "user3": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
+            "harshit": {"password": "234", "last_viewed": 'realme Buds Air 3 Neo'},
+            "himanshu": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
 
 
 @app.route("/form_login", methods=["POST", "GET"])

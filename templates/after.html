@@ -3,6 +3,8 @@
 
 <head>
     <title>Recommendation Results</title>
+    <link rel="icon" href="{{ url_for('static', filename='cover.PNG') }}" type="image/png">
+    
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -61,6 +63,15 @@
             background-color: #002B5B;
             padding: 10px;
         }
+        .navbar-icon {
+            margin: 0 300px 0 300px;
+            width: 140px;
+            height: 40px;
+        }
+
+        .navbar img{
+            background-color: lightblue;
+        }
 
         .navbar-button {
             padding: 10px 20px;
@@ -103,6 +114,7 @@
 
     <div class="navbar">
         <button class="navbar-button" id="home-button">BACK</button>
+        <img src="{{ url_for('static', filename='cover.PNG') }}"  class="navbar-icon">
         <span id="cart-icon" class="cart-icon">🛒</span>
     </div>
 

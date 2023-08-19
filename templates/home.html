@@ -3,6 +3,7 @@
 
 <head>
     <title>Products Recommend</title>
+    <link rel="icon" href="{{ url_for('static', filename='cover.PNG') }}" type="image/png">
     <style>
         body {
             background-color: #000000;
@@ -129,6 +130,16 @@
             padding: 10px;
         }
 
+        .navbar-icon {
+            margin: 0 200px 0 500px;
+            width: 160px;
+            height: 60px;
+        }
+
+        .navbar img{
+            background-color: lightblue;
+        }
+
         .navbar-button {
             padding: 10px 20px;
             background-color: transparent;
@@ -199,9 +210,12 @@
 
     <div class="navbar">
         <button class="navbar-button" id="home-button">Home</button>
+        
+        <img src="{{ url_for('static', filename='cover.PNG') }}"  class="navbar-icon">
         <button class="navbar-button" id="laptop-button">Laptop</button>
         <button class="navbar-button" id="airbuds-button">Airbuds</button>
         <button class="navbar-button" id="phone-button">Phone</button>
+        
     </div>
 
     <div class="product-section product1-section" id="product-section">
@@ -233,7 +247,7 @@
         <div class="image-grid">
             {% for popular_product in last_viewed %}
             <div>
-                <a style="text-decoration: none;"    href="{{ url_for('show_recommendations',product=popular_product) }}">
+                <a style="text-decoration: none;" href="{{ url_for('show_recommendations',product=popular_product) }}">
                     <h2 style="color: black;">{{ popular_product }}</h2>
                 </a>
             </div>
