@@ -1,53 +1,49 @@
-from flask import Flask, render_template, request
-import numpy as np
-import csv
-import os
+from flask import Flask, render_template, request, jsonify
 
+import numpy as np
+import joblib as joblib
 app = Flask(__name__)
 
+# Load the preprocessed data and cosine similarity matrix from pickle.pkl
+import dill
+
 # Load the preprocessed data and cosine similarity matrix
-data = []
-pt = []
-popular_products = []
+with open("pickle.pkl", "rb") as f:
+    data = dill.load(f)
 
-with open("data.csv", "r") as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        data.append(row)
+with open("pt.pkl", "rb") as f:
+    pt = dill.load(f)
 
-with open("pt.csv", "r") as csv_file:
-    pt = np.loadtxt(csv_file, delimiter=',', dtype=str)
-
-with open("popular.csv", "r") as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        popular_products.append(row)
+with open("popular.pkl", "rb") as f:
+    popular_products = dill.load(f)
 
 # Load the cosine similarity matrix
-similarity = np.loadtxt("similarity.txt", delimiter=',')
-similarity_scores = np.loadtxt("similarity_scores.txt", delimiter=',')
+with open("similarity.pkl", "rb") as f:
+    similarity = dill.load(f)
+
+with open("similarity_scores.pkl", "rb") as f:
+    similarity_scores = dill.load(f)
+
 
 def recommend(product):
-    prod_ind = next((i for i, item in enumerate(data) if item["Product"] == product), None)
-    if prod_ind is not None:
-        distances = similarity[prod_ind]
-        similar_list = sorted(enumerate(distances), reverse=True, key=lambda x: x[1])[1:4]
-        recommended_products = [data[i[0]]["Product"] for i in similar_list]
-        return recommended_products
-    return []
+    prod_ind = data[data["Product"] == product].index[0]
+    distances = similarity[prod_ind]
+    similar_list = sorted(enumerate(distances), reverse=True, key=lambda x: x[1])[1:4]
+    recommended_products = [data.iloc[i[0]]["Product"] for i in similar_list]
+
+    return recommended_products
 
 def recommendx(prod):
-    index = np.where(pt == prod)[0][0]
+    index = np.where(pt.index == prod)[0][0]
     similar_items = sorted(
-        list(enumerate(similarity_scores[index])),
-        key=lambda x: x[1], reverse=True
+        list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True
     )
 
     recommended_products = []
     count = 0  # To keep track of recommended products
     for i in similar_items:
-        if pt[i[0]] != prod:  # Exclude the input product
-            recommended_products.append(pt[i[0]])
+        if pt.index[i[0]] != prod:  # Exclude the input product
+            recommended_products.append(pt.index[i[0]])
             count += 1
             if count >= 3:  # Get 3 recommendations
                 break
@@ -58,9 +54,10 @@ def recommendx(prod):
 def hello_world():
     return render_template("login.html")
 
-database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion'},
+database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion' },
             "user2": {"password": "234", "last_viewed": 'Lenovo IdeaPad'},
             "user3": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
+
 
 @app.route("/form_login", methods=["POST", "GET"])
 def login():
@@ -76,9 +73,11 @@ def login():
             user_last_viewed = recommend(product)
             return render_template(
                 "home.html",
-                popular_products=list(item["Product"] for item in popular_products),
-                last_viewed=user_last_viewed, product=product, name=name
+                popular_products=list(popular_products["Product"].values),
+                last_viewed=user_last_viewed,product=product,name=name
             )
+
+
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
@@ -98,6 +97,7 @@ def home():
             last_viewed=last_viewed_product,
         )
     return render_template("home.html")
+
 
 @app.route("/recommend/<product>", methods=["GET"])
 def show_recommendations(product):
