@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
-import joblib as joblib
+
 app = Flask(__name__)
 
 with open("pickle.pkl", "rb") as f:
