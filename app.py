@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, jsonify
-
+from flask import Flask, render_template, request
 import numpy as np
 import joblib as joblib
-app = Flask(__name__)
+import pandas as pd
+
+app = Flask(_name_)
 
 # Load the preprocessed data and cosine similarity matrix from pickle.pkl
 data = joblib.load("pickle.pkl")
@@ -46,7 +47,6 @@ database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion' },
             "user2": {"password": "234", "last_viewed": 'Lenovo IdeaPad'},
             "user3": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
 
-
 @app.route("/form_login", methods=["POST", "GET"])
 def login():
     name = request.form["username"]
@@ -64,8 +64,6 @@ def login():
                 popular_products=list(popular_products["Product"].values),
                 last_viewed=user_last_viewed,product=product,name=name
             )
-
-
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
@@ -86,7 +84,6 @@ def home():
         )
     return render_template("home.html")
 
-
 @app.route("/recommend/<product>", methods=["GET"])
 def show_recommendations(product):
     recommended_products = recommend(product)
@@ -98,5 +95,5 @@ def show_recommendations(product):
         extra_data=extra_recommended_products,
     )
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True)
