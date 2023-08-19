@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-import joblib as joblib
+
 import numpy as np
+import joblib as joblib
 app = Flask(__name__)
 
 # Load the preprocessed data and cosine similarity matrix from pickle.pkl
@@ -41,7 +42,10 @@ def recommendx(prod):
 def hello_world():
     return render_template("login.html")
 
-database = {"user1": "123", "user2": "234", "user3": "567"}
+database = {"user1": {"password": "123", "last_viewed": 'HP Pavilion' },
+            "user2": {"password": "234", "last_viewed": 'Lenovo IdeaPad'},
+            "user3": {"password": "567", "last_viewed": 'Xiaomi 12 Pro 5G'}}
+
 
 @app.route("/form_login", methods=["POST", "GET"])
 def login():
@@ -50,13 +54,18 @@ def login():
     if name not in database:
         return render_template("login.html", info="Invalid User")
     else:
-        if database[name] != pwd:
+        if database[name]["password"] != pwd:
             return render_template("login.html", info="Invalid Password")
         else:
+            product = database[name]["last_viewed"]
+            user_last_viewed = recommend(product)
             return render_template(
                 "home.html",
                 popular_products=list(popular_products["Product"].values),
+                last_viewed=user_last_viewed,product=product,name=name
             )
+
+
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
@@ -64,13 +73,19 @@ def home():
         product_name = request.form["product_name"]
         recommended_products = recommend(product_name)
         extra_recommended_products = recommendx(product_name)
+
+        user_name = request.form["username"]  # Get the logged-in user's name
+        last_viewed_product = database[user_name]["last_viewed"]
+
         return render_template(
             "after.html",
             data=recommended_products,
             data1=product_name,
             extra_data=extra_recommended_products,
+            last_viewed=last_viewed_product,
         )
     return render_template("home.html")
+
 
 @app.route("/recommend/<product>", methods=["GET"])
 def show_recommendations(product):

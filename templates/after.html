@@ -6,6 +6,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
 
             /* Replace 'Your-Desired-Font' with the actual font name */
         }
@@ -31,7 +33,7 @@
         .h1tag {
 
             font-family: 'Roboto', sans-serif;
-            font-size: 22px;
+            font-size: 30px;
             text-align: center;
             margin-top: 15px;
             margin-bottom: 5px;
@@ -42,7 +44,7 @@
         }
 
         #span1 {
-            color: red;
+            color: #ff3300;
             font-size: 23px;
             margin: 5px;
         }
@@ -56,15 +58,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #002B5B;
             padding: 10px;
         }
 
         .navbar-button {
             padding: 10px 20px;
-            background-color: #f0f0f0;
+            background-color: transparent;
+            /* Make the button background transparent */
             border: none;
             cursor: pointer;
+            color: white;
+            /* Change the text color to white */
+            font-weight: bold;
+            transition: color 0.3s ease;
+            /* Add a transition effect for color change */
+        }
+
+        .navbar-button:hover {
+            color: rgb(149, 219, 92);
+        }
+
+        .details1 h2 {
+            color: black;
+            text-decoration: none;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+            margin-left: 10px;
+            color:white;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
@@ -80,10 +103,11 @@
 
     <div class="navbar">
         <button class="navbar-button" id="home-button">BACK</button>
+        <span id="cart-icon" class="cart-icon">🛒</span>
     </div>
 
-    <article>
-        <div class="product-details">
+    <article style="margin-bottom: 20px;">
+        <div class="product-details" style="background-color: #ffffff;">
 
             <div class="productImage" style="float: left;">
                 <h1 id="heading1">{{data1}}</h1>
@@ -97,7 +121,7 @@
                     DESCRIPTION:<p>{{ clicked_product_description }}</p>
                 </div>
                 <div class="buttons-container">
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="cart-button" data-product="{{ data1 }}">Add to Cart</button>
                     <button class="buy-button">Buy Now</button>
                 </div>
             </div>
@@ -113,13 +137,15 @@
 
 
 
-    <h1 class="h1tag">RECOMMENDATIONS:</h1>
 
-    <div class="product-details1">
+
+    <div class="product-details1" style="background-color: #ffffff;">
+        <h1 class="h1tag">RECOMMENDATIONS:</h1>
         <div class="image-grid">
             {% for recommended_product in data %}
-            <div>
-                <a href="{{ url_for('show_recommendations', product=recommended_product) }}">
+            <div class="details1">
+                <a href="{{ url_for('show_recommendations', product=recommended_product) }}"
+                    style="text-decoration: none;">
                     <h2>{{ recommended_product }}</h2>
                 </a>
             </div>
@@ -129,12 +155,14 @@
     </div>
 
 
-    <h1 class="h1tag">USERS WHO LIKED {{data1}} ALSO LIKED :</h1>
+
     <div class="product-details1">
+        <h1 class="h1tag">USERS WHO LIKED {{data1}} ALSO LIKED :</h1>
         <div class="image-grid">
             {% for recommended_product_x in extra_data %}
             <div>
-                <a href="{{ url_for('show_recommendations', product=recommended_product_x) }}">
+                <a href="{{ url_for('show_recommendations', product=recommended_product_x) }}"
+                    style="text-decoration: none;">
                     <h2>{{ recommended_product_x }}</h2>
                 </a>
             </div>
@@ -151,12 +179,39 @@
 
     <script src="{{ url_for('static', filename='products.js') }}"></script>
     <script>
+
+        const cartIcon = document.getElementById('cart-icon');
+        const cart = [];
+
         const homeButton = document.getElementById("home-button");
         homeButton.addEventListener("click", () => {
             // Navigate back to the previous page
             window.history.back();
         });
 
+        const addToCartButtons = document.querySelectorAll('.cart-button');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the product name from the clicked button's data attribute
+                const productName = button.getAttribute('data-product');
+                // Find the product in the PRODUCTS array
+                const product = PRODUCTS.find(item => item.name === productName);
+                if (product) {
+                    // Add the product to the cart array
+                    cart.push(product);
+                    // Update the cart icon count
+                    updateCartIcon();
+                }
+            });
+        });
+
+        // Function to update the cart icon count
+        const updateCartIcon = () => {
+            cartIcon.textContent = `🛒 ${cart.length}`;
+        };
+
+        // Initialize the cart icon count
+        updateCartIcon();
 
         // Loop through the data and update the paragraphs
         const clickedProductHeading = document.getElementById('heading1');

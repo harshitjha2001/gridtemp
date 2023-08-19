@@ -4,10 +4,10 @@
 <head>
     <title>Products Recommend</title>
     <style>
-        /* body {
-            background-color: #d4a3ae;
-            text-align: center;
-        } */
+        body {
+            background-color: #000000;
+        }
+
 
 
         .image-grid {
@@ -74,13 +74,13 @@
             height: 230px;
         }
 
-        
+
         .button-row {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
             margin-bottom: 20px;
-                       /* Add space at the top */
+            /* Add space at the top */
         }
 
         .product-button {
@@ -95,12 +95,14 @@
         .popular-products-container {
             margin: 20px auto;
             padding: 20px;
-            background-color: #b1eaf4;
+            background-color: #ffffff;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
+            box-shadow: 10px 5px 6px rgba(0, 0, 0, 0.1);
+            border: 5px solid darkblue;
             border-radius: 5px;
+
             max-width: 1200px;
+            color: black;
             /* Adjust the max-width as needed */
         }
 
@@ -123,15 +125,55 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #002B5B;
             padding: 10px;
         }
 
         .navbar-button {
             padding: 10px 20px;
-            background-color: #f0f0f0;
+            background-color: transparent;
+            /* Make the button background transparent */
             border: none;
             cursor: pointer;
+            color: white;
+            /* Change the text color to white */
+            font-weight: bold;
+            transition: color 0.3s ease;
+            /* Add a transition effect for color change */
+        }
+
+        .navbar-button:hover {
+            color: rgb(149, 219, 92);
+        }
+
+        /* Center the welcome message */
+        .Welcome {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style the welcome message */
+        .welcome-message {
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Add emojis to the welcome message */
+        .welcome-message::before {
+            content: "🌟 ";
+            display: inline-block;
+        }
+
+        .welcome-message::after {
+            content: " 🌟";
+            display: inline-block;
+        }
+
+
+
+        .popular-products-container h2 {
+            color: black;
+            text-decoration: none;
         }
     </style>
     <meta charset="UTF-8">
@@ -139,7 +181,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!
     </title>
-    <link rel="icon" href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico" />
+    <!-- <link rel="icon" href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico" /> -->
     <!--stylesheet-->
     <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -179,6 +221,28 @@
         Airbuds
     </div> -->
 
+    <div class="Welcome">
+        <h2 class="welcome-message">Welcome {{name}} 🎉</h2>
+    </div>
+
+
+
+    <div class="product-details1" style="background-color: #ffffff;">
+        <h2>Since you Viewed: {{ product }}</h2>
+        <br>
+        <div class="image-grid">
+            {% for popular_product in last_viewed %}
+            <div>
+                <a style="text-decoration: none;"    href="{{ url_for('show_recommendations',product=popular_product) }}">
+                    <h2 style="color: black;">{{ popular_product }}</h2>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
 
 
     <div class="popular-products-container">
@@ -186,7 +250,7 @@
         <div class="image-grid">
             {% for popular_product in popular_products %}
             <div id="content">
-                <a href="{{ url_for('show_recommendations',product=popular_product) }}">
+                <a style="text-decoration: none;" href="{{ url_for('show_recommendations',product=popular_product) }}">
                     <h2>{{ popular_product }}</h2>
                 </a>
             </div>
