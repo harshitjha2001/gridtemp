@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import joblib as joblib
 import pandas as pd
-
+import os
 app = Flask(_name_)
 
 # Load the preprocessed data and cosine similarity matrix from pickle.pkl
