@@ -3,7 +3,7 @@ import numpy as np
 import joblib as joblib
 import pandas as pd
 import os
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Load the preprocessed data and cosine similarity matrix from pickle.pkl
 data = joblib.load("pickle.pkl")
@@ -95,5 +95,5 @@ def show_recommendations(product):
         extra_data=extra_recommended_products,
     )
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
