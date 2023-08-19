@@ -1,7 +1,8 @@
 joblib
-Flask
-numpy
+Flask==2.0.1
+numpy==1.21.1
 scikit_learn
 gunicorn
-pandas==1.5.3
+csv
+
 
