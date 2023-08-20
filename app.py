@@ -13,7 +13,6 @@ with open("pt.pkl", "rb") as f:
 with open("popular.pkl", "rb") as f:
     popular_products = pickle.load(f)
 
-# Load the cosine similarity matrix from the pickle
 with open("similarity.pkl", "rb") as f:
     similarity = pickle.load(f)
 
@@ -35,12 +34,12 @@ def recommendx(prod):
     )
 
     recommended_products = []
-    count = 0  # To keep track of recommended products
+    count = 0  
     for i in similar_items:
         if pt.index[i[0]] != prod:  # Exclude the input product
             recommended_products.append(pt.index[i[0]])
             count += 1
-            if count >= 3:  # Get 3 recommendations
+            if count >= 3:  #3 recommendations
                 break
 
     return recommended_products
@@ -81,7 +80,7 @@ def home():
         recommended_products = recommend(product_name)
         extra_recommended_products = recommendx(product_name)
 
-        user_name = request.form["username"]  # Get the logged-in user's name
+        user_name = request.form["username"]  # logged-in user's name
         last_viewed_product = database[user_name]["last_viewed"]
 
         return render_template(

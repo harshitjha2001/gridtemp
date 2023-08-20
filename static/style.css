@@ -42,8 +42,8 @@ img {
 
     text-align: center;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     
 }
 
@@ -113,9 +113,9 @@ img {
 
 .buttons-container {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
+    justify-content: center;
     gap: 10px;
-    margin-top: 20px; /* Add some spacing at the top */
+    margin-top: 20px; 
 }
 
 .buy-button, .cart-button {

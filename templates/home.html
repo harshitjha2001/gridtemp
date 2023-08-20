@@ -9,15 +9,10 @@
             background-color: #000000;
         }
 
-
-
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-
-            /* flex-basis: calc(33.33%-20px);
-            text-align: center; */
             justify-content: space-between;
             margin: auto;
         }
@@ -41,7 +36,6 @@
             height: auto;
             width: 250px;
             height: 230px;
-            /* Adjust this value to your preference */
         }
 
         .product1-section {
@@ -52,7 +46,6 @@
             margin: auto;
             max-width: 1000px;
             text-align: center;
-            /* Adjust this value to control the maximum width */
         }
 
         .product1-section a {
@@ -81,12 +74,10 @@
             justify-content: space-between;
             margin-top: 20px;
             margin-bottom: 20px;
-            /* Add space at the top */
         }
 
         .product-button {
             margin: 0 10px;
-            /* Add horizontal spacing between buttons */
             padding: 10px 20px;
             background-color: #f0f0f0;
             border: none;
@@ -101,10 +92,8 @@
             box-shadow: 10px 5px 6px rgba(0, 0, 0, 0.1);
             border: 5px solid darkblue;
             border-radius: 5px;
-
             max-width: 1200px;
             color: black;
-            /* Adjust the max-width as needed */
         }
 
         .popular-products-heading::before {
@@ -143,33 +132,30 @@
         .navbar-button {
             padding: 10px 20px;
             background-color: transparent;
-            /* Make the button background transparent */
             border: none;
             cursor: pointer;
             color: white;
-            /* Change the text color to white */
             font-weight: bold;
             transition: color 0.3s ease;
-            /* Add a transition effect for color change */
+         
         }
 
         .navbar-button:hover {
             color: rgb(149, 219, 92);
         }
 
-        /* Center the welcome message */
+
         .Welcome {
             text-align: center;
             margin-top: 20px;
         }
 
-        /* Style the welcome message */
+
         .welcome-message {
             font-size: 24px;
             color: #333;
         }
 
-        /* Add emojis to the welcome message */
         .welcome-message::before {
             content: "🌟 ";
             display: inline-block;
@@ -196,9 +182,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!
     </title>
-    <!-- <link rel="icon" href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico" /> -->
-    <!--stylesheet-->
-    <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -223,21 +206,10 @@
     </div>
 
     <div class="product-section product1-section" id="product-section">
-        <!-- Product content will be displayed here using JavaScript -->
+        
     </div>
 
 
-
-
-
-
-    <!-- <div class="Phone">
-        Phones
-    </div>
-
-    <div class="Airbuds">
-        Airbuds
-    </div> -->
 
     <div class="Welcome">
         <h2 class="welcome-message">Welcome {{name}} 🎉</h2>
@@ -349,7 +321,6 @@
 
         const imageGrid = document.getElementById('image-grid');
 
-        // Loop through PRODUCTS array and generate anchor tags
         const paragraphs = document.querySelectorAll('h2');
         paragraphs.forEach(paragraph => {
             const text = paragraph.textContent.trim();

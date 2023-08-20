@@ -4,14 +4,12 @@
 <head>
     <title>Recommendation Results</title>
     <link rel="icon" href="{{ url_for('static', filename='cover.png') }}" type="image/png">
-    
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-
-            /* Replace 'Your-Desired-Font' with the actual font name */
         }
 
         .image-grid {
@@ -20,8 +18,6 @@
             gap: 20px;
             justify-items: center;
             margin-top: 20px;
-
-
         }
 
         .image-grid img {
@@ -29,7 +25,6 @@
             height: auto;
             max-height: 200px;
             margin-top: 10px;
-
         }
 
         .h1tag {
@@ -63,27 +58,25 @@
             background-color: #002B5B;
             padding: 10px;
         }
+
         .navbar-icon {
             margin: 0 300px 0 300px;
             width: 140px;
             height: 40px;
         }
 
-        .navbar img{
+        .navbar img {
             background-color: lightblue;
         }
 
         .navbar-button {
             padding: 10px 20px;
             background-color: transparent;
-            /* Make the button background transparent */
             border: none;
             cursor: pointer;
             color: white;
-            /* Change the text color to white */
             font-weight: bold;
             transition: color 0.3s ease;
-            /* Add a transition effect for color change */
         }
 
         .navbar-button:hover {
@@ -98,23 +91,21 @@
         .cart-icon {
             font-size: 24px;
             margin-left: 10px;
-            color:white;
+            color: white;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:ital,wght@0,300;1,100&display=swap"
-        rel="stylesheet">
-    <!-- Include your other scripts and resources here -->
+    <link ref="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
     <div class="navbar">
         <button class="navbar-button" id="home-button">BACK</button>
-        <img src="{{ url_for('static', filename='cover.png') }}"  class="navbar-icon">
+        <img src="{{ url_for('static', filename='cover.png') }}" class="navbar-icon">
         <span id="cart-icon" class="cart-icon">🛒</span>
     </div>
 
@@ -137,14 +128,7 @@
                     <button class="buy-button">Buy Now</button>
                 </div>
             </div>
-
-
-
-
-
-        </div>
-
-
+    </div>
     </article>
 
 
@@ -163,7 +147,6 @@
             </div>
             {% endfor %}
         </div>
-
     </div>
 
 
@@ -184,11 +167,6 @@
     </div>
 
 
-
-
-    <!-- Include your other HTML content and scripts here -->
-
-
     <script src="{{ url_for('static', filename='products.js') }}"></script>
     <script>
 
@@ -197,35 +175,29 @@
 
         const homeButton = document.getElementById("home-button");
         homeButton.addEventListener("click", () => {
-            // Navigate back to the previous page
+            //back to the previous page
             window.history.back();
         });
 
         const addToCartButtons = document.querySelectorAll('.cart-button');
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Get the product name from the clicked button's data attribute
-                const productName = button.getAttribute('data-product');
-                // Find the product in the PRODUCTS array
-                const product = PRODUCTS.find(item => item.name === productName);
+               const productName = button.getAttribute('data-product');
+               const product = PRODUCTS.find(item => item.name === productName);
                 if (product) {
-                    // Add the product to the cart array
                     cart.push(product);
-                    // Update the cart icon count
                     updateCartIcon();
                 }
             });
         });
 
-        // Function to update the cart icon count
         const updateCartIcon = () => {
             cartIcon.textContent = `🛒 ${cart.length}`;
         };
 
-        // Initialize the cart icon count
+
         updateCartIcon();
 
-        // Loop through the data and update the paragraphs
         const clickedProductHeading = document.getElementById('heading1');
         const clickedProductName = clickedProductHeading.textContent.trim();
         const clickedProduct = PRODUCTS.find(item => item.name === clickedProductName);
