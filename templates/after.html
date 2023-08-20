@@ -168,11 +168,11 @@
 
 
 
-    <div class="product-details1">
+    <div class="product-details1" style="background-color: #ffffff;">
         <h1 class="h1tag">USERS WHO LIKED {{data1}} ALSO LIKED :</h1>
         <div class="image-grid">
             {% for recommended_product_x in extra_data %}
-            <div>
+            <div class="details1">
                 <a href="{{ url_for('show_recommendations', product=recommended_product_x) }}"
                     style="text-decoration: none;">
                     <h2>{{ recommended_product_x }}</h2>

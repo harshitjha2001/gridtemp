@@ -186,6 +186,10 @@
             color: black;
             text-decoration: none;
         }
+
+        
+
+        
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -296,9 +300,10 @@
                 filteredProducts.forEach(product => {
                     const productAnchor = document.createElement("a");
                     productAnchor.href = `/recommend/${product.name}`;
+                   
 
                     const productDiv = document.createElement("div");
-                    productDiv.className = "product-card";
+                    
 
                     const productName = document.createElement("h2");
                     productName.textContent = product.name;
