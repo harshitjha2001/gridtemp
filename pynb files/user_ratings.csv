@@ -1,0 +1,262 @@
+User,Product,Rating
+1,HP Pavilion,4
+1,HP 15s,3
+1,Lenovo IdeaPad,5
+1,Lenovo Yoga Slim 7,4
+1,Dell 15 Laptop,3
+1,Dell G15,4
+1,Apple MacBook AIR M2,5
+1,Apple Macbook Air M1,5
+1,APPLE MacBook Pro M2 Pro,4
+1,Lenovo Intel Celeron,2
+1,Acer Aspire 7,3
+1,ASUS TUF Gaming F15,4
+1,Acer One Core,2
+1,Acer Aspire 3 Core,3
+1,ASUS Vivobook 16X,4
+1,ASUS Vivobook 15,3
+1,SAMSUNG Galaxy Book3,4
+1,HP Pavilion Plus,4
+1,MSI Bravo 15,4
+1,MSI Katana 15,3
+1,SAMSUNG Galaxy F14 5G,4
+1,SAMSUNG Galaxy M04,3
+1,REDMI 11,3
+1,REDMI Note 12 Pro 5G,4
+1,Xiaomi 12 Pro 5G,5
+1,SAMSUNG Galaxy A54 5G,4
+1,OnePlus NORD CE2 LITE,4
+1,APPLE iPhone 14 Plus,5
+1,APPLE iPhone 12,5
+1,OPPO Reno10 5G,4
+1,MOTOROLA G32,3
+1,MOTOROLA e13,3
+1,POCO C51,3
+1,POCO C55,3
+1,MOTOROLA Edge 40,4
+1,MOTOROLA Edge 30 Ultra,4
+1,APPLE iPhone 13,5
+1,SAMSUNG Galaxy S20,4
+1,SAMSUNG Galaxy S22 Ultra 5G,5
+1,realme GT 2,4
+1,realme Buds Air 3 Neo,4
+1,truke Air Buds,3
+1,Noise Air Buds Mini 2,3
+1,boAt Airdopes 161,3
+1,Tunifi Gaming Pro 60,4
+1,Xezbi Earpod AIR-PRO,4
+1,realme Buds Air 3,4
+1,Portronics Harmonics Twins S3,3
+1,Earboss AirDoze,3
+1,boAt Airdopes 192,3
+1,Boult Audio Airbass Z35,4
+1,realme Buds Air 3S,4
+2,HP Pavilion,5
+2,HP 15s,4
+2,Lenovo IdeaPad,5
+2,Lenovo Yoga Slim 7,4
+2,Dell 15 Laptop,4
+2,Dell G15,4
+2,Apple MacBook AIR M2,5
+2,Apple Macbook Air M1,5
+2,APPLE MacBook Pro M2 Pro,4
+2,Lenovo Intel Celeron,3
+2,Acer Aspire 7,4
+2,ASUS TUF Gaming F15,4
+2,Acer One Core,3
+2,Acer Aspire 3 Core,4
+2,ASUS Vivobook 16X,4
+2,ASUS Vivobook 15,4
+2,SAMSUNG Galaxy Book3,4
+2,HP Pavilion Plus,5
+2,MSI Bravo 15,5
+2,MSI Katana 15,4
+2,SAMSUNG Galaxy F14 5G,4
+2,SAMSUNG Galaxy M04,3
+2,REDMI 11,3
+2,REDMI Note 12 Pro 5G,4
+2,Xiaomi 12 Pro 5G,5
+2,SAMSUNG Galaxy A54 5G,4
+2,OnePlus NORD CE2 LITE,4
+2,APPLE iPhone 14 Plus,5
+2,APPLE iPhone 12,5
+2,OPPO Reno10 5G,4
+2,MOTOROLA G32,4
+2,MOTOROLA e13,3
+2,POCO C51,3
+2,POCO C55,3
+2,MOTOROLA Edge 40,4
+2,MOTOROLA Edge 30 Ultra,4
+2,APPLE iPhone 13,5
+2,SAMSUNG Galaxy S20,4
+2,SAMSUNG Galaxy S22 Ultra 5G,5
+2,realme GT 2,4
+2,realme Buds Air 3 Neo,4
+2,truke Air Buds,3
+2,Noise Air Buds Mini 2,3
+2,boAt Airdopes 161,3
+2,Tunifi Gaming Pro 60,4
+2,Xezbi Earpod AIR-PRO,4
+2,realme Buds Air 3,4
+2,Portronics Harmonics Twins S3,3
+2,Earboss AirDoze,3
+2,boAt Airdopes 192,3
+2,Boult Audio Airbass Z35,4
+2,realme Buds Air 3S,4
+3,HP Pavilion,4
+3,HP 15s,3
+3,Lenovo IdeaPad,4
+3,Lenovo Yoga Slim 7,4
+3,Dell 15 Laptop,3
+3,Dell G15,4
+3,Apple MacBook AIR M2,5
+3,Apple Macbook Air M1,4
+3,APPLE MacBook Pro M2 Pro,4
+3,Lenovo Intel Celeron,2
+3,Acer Aspire 7,3
+3,ASUS TUF Gaming F15,4
+3,Acer One Core,2
+3,Acer Aspire 3 Core,3
+3,ASUS Vivobook 16X,4
+3,ASUS Vivobook 15,3
+3,SAMSUNG Galaxy Book3,4
+3,HP Pavilion Plus,4
+3,MSI Bravo 15,4
+3,MSI Katana 15,3
+3,SAMSUNG Galaxy F14 5G,4
+3,SAMSUNG Galaxy M04,3
+3,REDMI 11,3
+3,REDMI Note 12 Pro 5G,4
+3,Xiaomi 12 Pro 5G,5
+3,SAMSUNG Galaxy A54 5G,4
+3,OnePlus NORD CE2 LITE,4
+3,APPLE iPhone 14 Plus,5
+3,APPLE iPhone 12,5
+3,OPPO Reno10 5G,4
+3,MOTOROLA G32,4
+3,MOTOROLA e13,3
+3,POCO C51,3
+3,POCO C55,3
+3,MOTOROLA Edge 40,4
+3,MOTOROLA Edge 30 Ultra,4
+3,APPLE iPhone 13,5
+3,SAMSUNG Galaxy S20,4
+3,SAMSUNG Galaxy S22 Ultra 5G,5
+3,realme GT 2,4
+3,realme Buds Air 3 Neo,4
+3,truke Air Buds,3
+3,Noise Air Buds Mini 2,3
+3,boAt Airdopes 161,3
+3,Tunifi Gaming Pro 60,4
+3,Xezbi Earpod AIR-PRO,4
+3,realme Buds Air 3,4
+3,Portronics Harmonics Twins S3,3
+3,Earboss AirDoze,3
+3,boAt Airdopes 192,3
+3,Boult Audio Airbass Z35,4
+3,realme Buds Air 3S,4
+4,HP Pavilion,5
+4,HP 15s,4
+4,Lenovo IdeaPad,5
+4,Lenovo Yoga Slim 7,4
+4,Dell 15 Laptop,4
+4,Dell G15,4
+4,Apple MacBook AIR M2,5
+4,Apple Macbook Air M1,5
+4,APPLE MacBook Pro M2 Pro,4
+4,Lenovo Intel Celeron,3
+4,Acer Aspire 7,4
+4,ASUS TUF Gaming F15,4
+4,Acer One Core,3
+4,Acer Aspire 3 Core,4
+4,ASUS Vivobook 16X,4
+4,ASUS Vivobook 15,4
+4,SAMSUNG Galaxy Book3,4
+4,HP Pavilion Plus,5
+4,MSI Bravo 15,5
+4,MSI Katana 15,4
+4,SAMSUNG Galaxy F14 5G,4
+4,SAMSUNG Galaxy M04,3
+4,REDMI 11,3
+4,REDMI Note 12 Pro 5G,4
+4,Xiaomi 12 Pro 5G,5
+4,SAMSUNG Galaxy A54 5G,4
+4,OnePlus NORD CE2 LITE,4
+4,APPLE iPhone 14 Plus,5
+4,APPLE iPhone 12,5
+4,OPPO Reno10 5G,4
+4,MOTOROLA G32,4
+4,MOTOROLA e13,3
+4,POCO C51,3
+4,POCO C55,3
+4,MOTOROLA Edge 40,4
+4,MOTOROLA Edge 30 Ultra,4
+4,APPLE iPhone 13,5
+4,SAMSUNG Galaxy S20,4
+4,SAMSUNG Galaxy S22 Ultra 5G,5
+4,realme GT 2,4
+4,realme Buds Air 3 Neo,4
+4,truke Air Buds,3
+4,Noise Air Buds Mini 2,3
+4,boAt Airdopes 161,3
+4,Tunifi Gaming Pro 60,4
+4,Xezbi Earpod AIR-PRO,4
+4,realme Buds Air 3,4
+4,Portronics Harmonics Twins S3,3
+4,Earboss AirDoze,3
+4,boAt Airdopes 192,3
+4,Boult Audio Airbass Z35,4
+4,realme Buds Air 3S,4
+5,HP Pavilion,4
+5,HP 15s,3
+5,Lenovo IdeaPad,4
+5,Lenovo Yoga Slim 7,4
+5,Dell 15 Laptop,3
+5,Dell G15,4
+5,Apple MacBook AIR M2,5
+5,Apple Macbook Air M1,4
+5,APPLE MacBook Pro M2 Pro,4
+5,Lenovo Intel Celeron,2
+5,Acer Aspire 7,3
+5,ASUS TUF Gaming F15,4
+5,Acer One Core,2
+5,Acer Aspire 3 Core,3
+5,ASUS Vivobook 16X,4
+5,ASUS Vivobook 15,3
+5,SAMSUNG Galaxy Book3,4
+5,HP Pavilion Plus,4
+5,MSI Bravo 15,4
+5,MSI Katana 15,3
+5,SAMSUNG Galaxy F14 5G,4
+5,SAMSUNG Galaxy M04,3
+5,REDMI 11,3
+5,REDMI Note 12 Pro 5G,4
+5,Xiaomi 12 Pro 5G,5
+5,SAMSUNG Galaxy A54 5G,4
+5,OnePlus NORD CE2 LITE,4
+5,APPLE iPhone 14 Plus,5
+5,APPLE iPhone 12,5
+5,OPPO Reno10 5G,4
+5,MOTOROLA G32,4
+5,MOTOROLA e13,3
+5,POCO C51,3
+5,POCO C55,3
+5,MOTOROLA Edge 40,4
+5,MOTOROLA Edge 30 Ultra,4
+5,APPLE iPhone 13,5
+5,SAMSUNG Galaxy S20,4
+5,SAMSUNG Galaxy S22 Ultra 5G,5
+5,realme GT 2,4
+5,realme Buds Air 3 Neo,4
+5,truke Air Buds,3
+5,Noise Air Buds Mini 2,3
+5,boAt Airdopes 161,3
+5,Tunifi Gaming Pro 60,4
+5,Xezbi Earpod AIR-PRO,4
+5,realme Buds Air 3,4
+5,Portronics Harmonics Twins S3,3
+5,Earboss AirDoze,3
+5,boAt Airdopes 192,3
+5,Boult Audio Airbass Z35,4
+5,realme Buds Air 3S,4
+
